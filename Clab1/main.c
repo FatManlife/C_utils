@@ -19,7 +19,7 @@ int main(){
     do { 
         printf("Introdu px: ");
         scanf("%f", &px);
-   } while(px == 0 || px > x2 - x1);
+   } while(px <= 0);
   
     printf("\nIntrodu a: ");
     scanf("%f", &a);
