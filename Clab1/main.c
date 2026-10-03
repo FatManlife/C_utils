@@ -37,20 +37,28 @@ int main(){
         n++;
 
         if(c + b < 0 && a != 0 ){
-            if (b*b - x == 0) printf("Arithmetic error");
-            else F = (a*cos(x)*cos(x) + c)/(b*b-x); 
+            if (b*b - x == 0) printf("%3i) Arithmetic error\n", n);
+            else{
+                F = (a*cos(x)*cos(x) + c)/(b*b-x); 
+                printf("%3i) x=%.3f F=%.3f\n",n,x,F);
+            }
         } 
         else if ( c + b > 0 && a == 0) 
         {
-            if (b*b - c*x == 0 || x*b > 0)printf("Arithmetic error");
-            else F = (a*x - log(b*x))/(b*b - c*x);
+            if (b*b - c*x == 0 || x*b <= 0)printf("%3i) Arithmetic error\n", n);
+            else {
+                F = (a*x - log(b*x))/(b*b - c*x);
+                printf("%3i) x=%.3f F=%.3f\n",n,x,F);
+            }
         }
         else{
-            if(a*a + c + b*x == 0 || x > 0)printf("Arithmetic Error");
-            else F = (3*sin(x) + 4*log(2*x))/(a*a + c + b*x);
+            if(a*a + c + b*x == 0 || x <= 0)printf("%3i) Arithmetic error\n", n);
+            else{
+                F = (3*sin(x) + 4*log(2*x))/(a*a + c + b*x);
+                printf("%3i) x=%.3f F=%.3f\n",n,x,F);
+            } 
         } 
 
-        printf("%3i) x=%.3f F=%.3f\n",n,x,F);
 
         x += px;
     }
