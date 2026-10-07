@@ -78,16 +78,16 @@ int main(){
     // printf("Ultima cifra a produsului %d", prod % 10);
 
     //P-25 Ex29
-    const int n = rand()%100 + 1;
+    // const int n = rand()%100 + 1;
 
-    int v[n];  
-    int max = 0;
-    uint flag = 0;
+    // int v[n];  
+    // int max = 0;
+    // uint flag = 0;
 
-    int prag;
+    // int prag;
 
-    printf("Intrdou valoarea maxima limita : ");
-    scanf("%d", &prag);
+    // printf("Intrdou valoarea maxima limita : ");
+    // scanf("%d", &prag);
 
     //A)
     // for(int i = 0; i < n; i++)
@@ -99,22 +99,22 @@ int main(){
     // }
 
     //B)
-    for(int i = 0; i < n; i++)
-    {
-        v[i] = rand()%100 - 50;
-        if ((i == 0 || max < v[i]) && v[i] <= prag){
-            max = v[i]; 
-            flag = 1;
-        }
-        printf("%4d", v[i]);
-    }
+    // for(int i = 0; i < n; i++)
+    // {
+    //     v[i] = rand()%100 - 50;
+    //     if ((i == 0 || max < v[i]) && v[i] <= prag){
+    //         max = v[i]; 
+    //         flag = 1;
+    //     }
+    //     printf("%4d", v[i]);
+    // }
 
-    printf("\n\n");
+    // printf("\n\n");
 
-    if (flag == 0 ) printf("Nu exista numere mai mici de %d", prag); 
-    else printf("Maximu in %d este %d", prag, max);
+    // if (flag == 0 ) printf("Nu exista numere mai mici de %d", prag); 
+    // else printf("Maximu in %d este %d", prag, max);
 
-    printf("\n");
+    // printf("\n");
 
     // printf("\n");
     
@@ -141,6 +141,154 @@ int main(){
     // for(int i = 0; i < j; i++)printf("%d ", pos[i]);
     // printf("\n");
 
+    //Ex13 p53
+
+    // int n;
+
+    // printf("Intrdou n de la tastiera: ");
+
+    // scanf("%d", &n);
+
+    // int v[n];
+
+    // for(int i = 0; i < n; i++){
+    //    printf("Introdu v[%d]: ", i) ;
+    //    scanf("%d", &v[i]);
+    // }
+
+    // printf("\nVectorul: ");
+
+    // for(int i = 0; i < n; i++) printf("%d ", v[i]);
+
+    // bool f = true;
+
+    // for(int i = 0; i < n/2; i++)
+    //     if(v[i] != v[n-i-1]){
+    //         f = false;
+    //         break;
+    //     }
+
+    // printf("\n");
+
+    // if(f)printf("Vectorul este simetric");
+    // else printf("Vectorul nu este simetric");
+
+    // printf("\n");
+
+    //Ex23 p56
+    // int n;
+
+    // printf("Intrdou n de la tastiera: ");
+
+    // scanf("%d", &n);
+
+    // int v[n];
+
+    // for(int i = 0; i < n; i++){
+    //    printf("Introdu v[%d]: ", i) ;
+    //    scanf("%d", &v[i]);
+    // }
+
+    // printf("\nVectorul: ");
+
+    // for(int i = 0; i < n; i++) printf("%d ", v[i]);
+
+    // int ctr = 0;
+    // int ctr_f = 0;
+
+    // for(int i = 0; i < n; i++){
+    //     if(v[i] != 0 )ctr = 0;
+    //     if(ctr_f < ctr) ctr_f = ctr;
+    //     ctr++;
+    // }
+
+    // printf("Cea mai lunga secventa de zeroruri e %d", ctr_f);
+
+    //Ex7 p/65
+
+    // int x, y;
+
+    // printf("Intrdou nr de randuri: ");
+    // scanf("%d", &x);
+
+    // printf("Intrdou nr de coloane: ");
+    // scanf("%d", &y);
+
+    // int m[x][y];
+
+    // for(int i = 0; i < x; i++)
+    //     for(int j = 0; j < y; j++)
+    //         m[i][j] = rand()%19 - 9;
+
+    // printf("\n"); 
+
+    // for(int i = 0; i < x; i++){
+    //     for(int j = 0; j < y; j++)printf("%3d ", m[i][j]);
+    //     printf("\n");
+    // }
+
+    // printf("\n");
+
+    // int s = 0;
+    // int ctr = 0;
+
+    // for(int i = 0; i < x; i++)
+    //     for(int j = 0; j < y; j++)
+    //         if(m[i][j] > 0){
+    //             s += m[i][j]; 
+    //             ctr++;
+    //         }
+
+    // printf("Medica aritmetica a elemntelor pozitive este %.2f \n", (float)s/ctr);
+
+    //Pr11 p65
+
+    int x, y;
+
+    printf("Intrdou nr de randuri: ");
+    scanf("%d", &x);
+
+    printf("Intrdou nr de coloane: ");
+    scanf("%d", &y);
+
+    int m[x][y];
+
+    for(int i = 0; i < x; i++)
+        for(int j = 0; j < y; j++)
+            m[i][j] = rand()%19 - 9;
+
+    printf("\n"); 
+
+    for(int i = 0; i < x; i++){
+        for(int j = 0; j < y; j++)printf("%3d ", m[i][j]);
+        printf("\n");
+    }
+
+    printf("\n");
+
+    int s = 0;
+    int p = 1;
+    bool f = true;
+
+    //c)
+    for(int i = 0; i < x; i++)
+        for(int j = 0; j < y; j++)
+            if((m[i][j]%3 == 0 || m[i][j]%2 == 0) && m[i][j] != 0){
+                s += m[i][j];
+                p *= m[i][j];
+                f = false;
+            }
+
+    if(f)printf("Nu exista elemente divizibile cu 3");
+    else {
+        printf("Suma este %d\n", s);
+        printf("Produsul este %d", p);
+    }
+
+    printf("\n");
+
     return 0;
+    //p66 ex 26
 }
+
 //pr 20,21,22,24 p56 p53 pr 12;
