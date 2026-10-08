@@ -243,52 +243,108 @@ int main(){
 
     //Pr11 p65
 
-    int x, y;
+    // int x, y;
 
-    printf("Intrdou nr de randuri: ");
-    scanf("%d", &x);
+    // printf("Intrdou nr de randuri: ");
+    // scanf("%d", &x);
 
-    printf("Intrdou nr de coloane: ");
-    scanf("%d", &y);
+    // printf("Intrdou nr de coloane: ");
+    // scanf("%d", &y);
 
-    int m[x][y];
+    // int m[x][y];
 
-    for(int i = 0; i < x; i++)
-        for(int j = 0; j < y; j++)
-            m[i][j] = rand()%19 - 9;
+    // for(int i = 0; i < x; i++)
+    //     for(int j = 0; j < y; j++)
+    //         m[i][j] = rand()%19 - 9;
+
+    // printf("\n"); 
+
+    // for(int i = 0; i < x; i++){
+    //     for(int j = 0; j < y; j++)printf("%3d ", m[i][j]);
+    //     printf("\n");
+    // }
+
+    // printf("\n");
+
+    // int s = 0;
+    // int p = 1;
+    // bool f = true;
+
+    // //c)
+    // for(int i = 0; i < x; i++)
+    //     for(int j = 0; j < y; j++)
+    //         if((m[i][j]%3 == 0 || m[i][j]%2 == 0) && m[i][j] != 0){
+    //             s += m[i][j];
+    //             p *= m[i][j];
+    //             f = false;
+    //         }
+
+    // if(f)printf("Nu exista elemente divizibile cu 3");
+    // else {
+    //     printf("Suma este %d\n", s);
+    //     printf("Produsul este %d", p);
+    // }
+
+    // printf("\n");
+
+    // return 0;
+    // //p66 ex 26
+    const int n = rand()%6 + 5;
+
+    int m1[n][n], m2[n][n], m3[n][n];
+
+    for(int i = 0; i < n; i++)
+        for(int j = 0; j < n; j++ ){
+            m1[i][j] = rand()%20 - 10;
+            m2[i][j] = rand()%20 - 10;
+        }
+
+    printf("M1 :\n");
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++ )
+            printf("%3d ",m1[i][j]) ;
+       printf("\n"); 
+    }
+
+    printf("\nM2 :\n");
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++ )
+            printf("%3d ",m2[i][j]) ;
+       printf("\n"); 
+    }
+
+    printf("\nSum M3 :\n");
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++ ){
+            m3[i][j] = m2[i][j] + m1[i][j];
+            printf("%3d ",m3[i][j]) ;
+        }
+       printf("\n"); 
+    }
+
+    for(int i = 0; i < n; i++)
+        for(int j = 0; j < n; j++ )
+            m3[i][j] = 0;
+
+    printf("\nProdus M3 :\n");
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++ ){
+            for(int z = 0; z < n; z++){
+                m3[i][j] += m1[i][z] * m2[z][j];
+            }
+            printf("%3d ",m3[i][j]) ;
+        }
+       printf("\n"); 
+    }
+
 
     printf("\n"); 
 
-    for(int i = 0; i < x; i++){
-        for(int j = 0; j < y; j++)printf("%3d ", m[i][j]);
-        printf("\n");
-    }
-
-    printf("\n");
-
-    int s = 0;
-    int p = 1;
-    bool f = true;
-
-    //c)
-    for(int i = 0; i < x; i++)
-        for(int j = 0; j < y; j++)
-            if((m[i][j]%3 == 0 || m[i][j]%2 == 0) && m[i][j] != 0){
-                s += m[i][j];
-                p *= m[i][j];
-                f = false;
-            }
-
-    if(f)printf("Nu exista elemente divizibile cu 3");
-    else {
-        printf("Suma este %d\n", s);
-        printf("Produsul este %d", p);
-    }
-
-    printf("\n");
-
     return 0;
-    //p66 ex 26
 }
 
 //pr 20,21,22,24 p56 p53 pr 12;
