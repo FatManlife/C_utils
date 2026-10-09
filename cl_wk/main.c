@@ -289,58 +289,72 @@ int main(){
 
     // return 0;
     // //p66 ex 26
-    const int n = rand()%6 + 5;
+    // const int x = 4;
+    // const int y = 2;
+    // const int p = 6;
 
-    int m1[n][n], m2[n][n], m3[n][n];
+    // int m1[x][y], m2[y][p], m3[x][p];
 
-    for(int i = 0; i < n; i++)
-        for(int j = 0; j < n; j++ ){
-            m1[i][j] = rand()%20 - 10;
-            m2[i][j] = rand()%20 - 10;
-        }
+    // for(int i = 0; i < x; i++)
+    //     for(int j = 0; j < y; j++ ){
+    //         m1[i][j] = rand()%20 - 10;
+    //     }
 
-    printf("M1 :\n");
+    // for(int i = 0; i < y; i++)
+    //     for(int j = 0; j < p; j++ ){
+    //         m2[i][j] = rand()%20 - 10;
+    //     }
 
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++ )
-            printf("%3d ",m1[i][j]) ;
-       printf("\n"); 
+    // printf("M1 :\n");
+
+    // for(int i = 0; i < x; i++){
+    //     for(int j = 0; j < y; j++ )
+    //         printf("%3d ",m1[i][j]) ;
+    //    printf("\n"); 
+    // }
+
+    // printf("\nM2 :\n");
+
+    // for(int i = 0; i < y; i++){
+    //     for(int j = 0; j < p; j++ )
+    //         printf("%3d ",m2[i][j]) ;
+    //    printf("\n"); 
     }
 
-    printf("\nM2 :\n");
+    // printf("\nSum M3 :\n");
 
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++ )
-            printf("%3d ",m2[i][j]) ;
-       printf("\n"); 
-    }
+    // for(int i = 0; i < n; i++){
+    //     for(int j = 0; j < n; j++ ){
+    //         m3[i][j] = m2[i][j] + m1[i][j];
+    //         printf("%3d ",m3[i][j]) ;
+    //     }
+    //    printf("\n"); 
+    // }
 
-    printf("\nSum M3 :\n");
-
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++ ){
-            m3[i][j] = m2[i][j] + m1[i][j];
-            printf("%3d ",m3[i][j]) ;
-        }
-       printf("\n"); 
-    }
-
-    for(int i = 0; i < n; i++)
-        for(int j = 0; j < n; j++ )
-            m3[i][j] = 0;
+    // for(int i = 0; i < n; i++)
+    //     for(int j = 0; j < n; j++ )
+    //         m3[i][j] = 0;
 
     printf("\nProdus M3 :\n");
 
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++ ){
-            for(int z = 0; z < n; z++){
-                m3[i][j] += m1[i][z] * m2[z][j];
-            }
-            printf("%3d ",m3[i][j]) ;
-        }
-       printf("\n"); 
-    }
+    // for(int i = 0 ; i < x; i++)
+    //     for(int j = 0; j < p; j++)
+    //         m3[i][j] = 0;
 
+    // for(int i = 0; i < x; i++){
+    //     for(int j = 0; j < p; j++ ){
+    //         for(int z = 0; z < y; z++){
+    //             m3[i][j] += m1[i][z] * m2[z][j];
+    //         }
+    //         printf("%3d ",m3[i][j]) ;
+    //     }
+    //    printf("\n"); 
+    // }
+
+
+    //De extras la ecran elementele ca sa verificam inegalitatile 
+    //De antrenat 3 extrageri pentru fiecare domeniu sa fie realizat lini coloane serpuni (dreapta jos stanga etc.)
+    //Inegalitatile pentru taote 4 domenii i < j < n-1
 
     printf("\n"); 
 
