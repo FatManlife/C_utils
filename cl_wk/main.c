@@ -319,7 +319,7 @@ int main(){
     //     for(int j = 0; j < p; j++ )
     //         printf("%3d ",m2[i][j]) ;
     //    printf("\n"); 
-    }
+//  }
 
     // printf("\nSum M3 :\n");
 
@@ -335,7 +335,7 @@ int main(){
     //     for(int j = 0; j < n; j++ )
     //         m3[i][j] = 0;
 
-    printf("\nProdus M3 :\n");
+    // printf("\nProdus M3 :\n");
 
     // for(int i = 0 ; i < x; i++)
     //     for(int j = 0; j < p; j++)
@@ -351,10 +351,107 @@ int main(){
     //    printf("\n"); 
     // }
 
+    // const int n = 10;
+
+    // int m[n][n];
+
+    // printf("M1 :\n");
+
+    // for(int i = 0; i < n; i++)
+    //     for(int j = 0; j < n; j++ )
+    //         m[i][j] = rand()%10;
+
+
+
+    // for(int i = 0; i < n; i++){
+    //     for(int j = 0; j < n; j++ ){
+    //         printf("%d ",m[i][j]) ;
+    //     }
+    //    printf("\n"); 
+    // }
+
+    // printf("\nAbove main d :\n");
+
+    // for(int i = 0; i < n; i++){
+    //     for(int j = i + 1 ; j < n; j++ ){
+    //         printf("%d ",m[i][j]);
+    //     }
+    //    printf("\n"); 
+    // }
+
+    // printf("\nBelow main d :\n");
+
+    // for(int i = 1; i < n; i++){
+    //     for(int j = 0; j < i; j++ ){
+    //         printf("%d ",m[i][j]);
+    //     }
+    //    printf("\n"); 
+    // }
+
+    // printf("\nAbove second d :\n");
+
+    // for(int i = 0; i < n; i++){
+    //     for(int j = 0; j < n - i - 1; j++ ){
+    //         printf("%d ",m[i][j]);
+    //     }
+    //    printf("\n"); 
+    // }
+
+    // printf("\nBelow second d :\n");
+
+    // for(int i = 1; i < n; i++){
+    //     for(int j = n-i; j < n ; j++){
+    //         printf("%d ",m[i][j]);
+    //     }
+    //    printf("\n"); 
+    // }
+
+    // printf("\nLinie :\n");
+
+    // for(int i = 0; i < n; i++){
+    //     for(int j = i + 1 ; j < n; j++ ){
+    //         printf("%d ",m[i][j]);
+    //     }
+    //    printf("\n"); 
+    // }
+
+    // printf("\ncoloane:\n");
+
+    // for(int i = 1; i < n; i++){
+    //     for(int j = 0; j < i; j++ ){
+    //         printf("%d ",m[j][i]);
+    //     }
+    //    printf("\n"); 
+    // }
+
+    // printf("\nserpuit:\n");
+
+    // for(int i = 0; i < n; i++){
+    //     for(int j = i % 2 == 0 ? i + 1 : n - 1 ; i % 2 == 0 ? j < n : j > i; i % 2 == 0 ? j++ : j--){
+    //         printf("%d ",m[i][j]);
+    //     }
+    //    printf("\n"); 
+    // }
 
     //De extras la ecran elementele ca sa verificam inegalitatile 
     //De antrenat 3 extrageri pentru fiecare domeniu sa fie realizat lini coloane serpuni (dreapta jos stanga etc.)
     //Inegalitatile pentru taote 4 domenii i < j < n-1
+
+    int *p;
+    int a = 9;
+
+    p = &a;
+    *p = 10;
+
+    printf("%p\n",p);
+
+    printf("%d\n",*p);
+
+    ++(*p);
+
+    printf("%p\n",p);
+
+    printf("%d",*p);
 
     printf("\n"); 
 
