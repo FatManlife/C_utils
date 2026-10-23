@@ -437,23 +437,137 @@ int main(){
     //De antrenat 3 extrageri pentru fiecare domeniu sa fie realizat lini coloane serpuni (dreapta jos stanga etc.)
     //Inegalitatile pentru taote 4 domenii i < j < n-1
 
-    int *p;
-    int a = 9;
+    // int *p;
+    // int a = 9;
 
-    p = &a;
-    *p = 10;
+    // p = &a;
+    // *p = 10;
 
-    printf("%p\n",p);
+    // printf("%p\n",p);
 
-    printf("%d\n",*p);
+    // printf("%d\n",*p);
 
-    ++(*p);
+    // ++(*p);
 
-    printf("%p\n",p);
+    // printf("%p\n",p);
 
-    printf("%d",*p);
+    // printf("%d",*p);
 
-    printf("\n"); 
+    // printf("\n"); 
+
+    const int n = 5;  
+
+    int m[n][n];
+
+    for(int i = 0; i < n; i++)
+        for(int j = 0; j < n; j++)
+            m[i][j] = rand() % 10;
+
+    printf("Matrix: \n");
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++)
+            printf("%d ",m[i][j]); 
+        printf("\n");
+    }
+
+    // printf("\nPrimul Rand : ");
+
+    // for(int i = 0;  i < n; i++){
+    //     printf("%d ", m[0][i]);
+    // } 
+
+    // printf("\n");
+
+    // printf("Ultima coloana : ");
+
+    // for(int i = 0;  i < n; i++){
+    //     printf("%d ", m[i][n-1]);
+    // } 
+
+    // printf("\n");
+
+    // printf("Ultimul rand : ");
+
+    // for(int i = 0;  i < n; i++){
+    //     printf("%d ", m[n-1][i]);
+    // } 
+
+    // printf("\n");
+
+    // printf("Prima coloana : ");
+
+    // for(int i = 0;  i < n; i++){
+    //     printf("%d ", m[i][0]);
+    // } 
+
+    // printf("\n");
+
+    // printf("\nUn for:\n");
+
+    // for(int i = 0; i < n; i++){
+    //     printf("%d  ", m[0][i]);
+    //     printf("%d  ", m[i][n-1]);
+    //     printf("%d  ", m[n-1][i]);
+    //     printf("%d  ", m[i][0]);
+    //     printf("\n");
+    // }
+
+    printf("\n");
+
+    //prima linie ultima coloana
+
+    // for(int i = 0; i < n; i++){
+    //        for(int j = 0; j < n; j++){
+    //             if(i == 0 || j == n-1 || i == n-1 || j == 0){
+    //                 printf("%d ", m[i][j]);
+    //             } 
+    //        } 
+    // }
+
+    // for(int k = 0; k < n*n; k++){
+    //     int i = k / n; 
+    //     int j = k % n;
+        
+    //     if(i == 0 || i == n - 1 || j == 0 || j == n-1){
+    //         printf("%d ", m[i][j]);
+    //     }
+    // }
+
+    int i = 0, j = 0;
+
+    int di[] = {0, 1, 0, -1};
+    int dj[] = {1, 0, -1, 0};
+
+    int dir = 0;
+
+    for(int k = 0; k < 4*n-4; k++){
+        printf("%d ", m[i][j]);
+
+        if (dir == 0 && j == n - 1)dir = 1;
+        else if (dir == 1 && i == n - 1) dir = 2;
+        else if (dir == 2 && j == 0) dir = 3;
+
+        
+        i += di[dir];
+        j += dj[dir];
+    }
+
+
+    // for(int k = 0; k < 4 * n - 4; k++){
+    //     printf("%d ", m[i][j]);
+
+    //     if(i == 0 && j < n-1)
+    //         j++;
+    //     else if (j == n-1 && i < n-1)
+    //         i++;
+    //     else if (i == n-1 && j > 0)
+    //         j--;
+    //     else 
+    //         i--;
+    // }
+
+    printf("\n");
 
     return 0;
 }
