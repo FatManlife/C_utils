@@ -3,19 +3,19 @@
 #include <math.h>
 
 int main(){
-    const int n = rand()%5 + 1;
-    const int m = rand()%5 + 1;
+    const int n = rand()%5 + 5;
+    const int m = rand()%5 + 5;
 
     int matrix[n][m];
 
     for(int i = 0; i < n; i++)
         for(int j = 0; j < m; j++)
-            matrix[i][j] = rand()%20 - 10;
+            matrix[i][j] = rand()%21 - 10;
 
     printf("Matricea este :\n");
 
     int n_suma = 0;
-    int pp = 1;
+    long long int pp = 1;
     int ctr = 0;
     bool f = false;
 
@@ -32,7 +32,7 @@ int main(){
             if(matrix[i][j] <= 0){
                 n_suma += matrix[i][j];
                 f = true;
-            } programarea
+            }
             else {
                 pp*=matrix[i][j];
                 ctr++;
@@ -45,7 +45,8 @@ int main(){
 
     printf("\n");
 
-    if(ctr) printf("Media geometrica a elementelor pozitive este %.2f", pow((float)pp,1/(float)ctr));
+
+    if(ctr) printf("Media geometrica a elementelor pozitive este %.2f", pow((double)pp,1/(double)ctr));
     else printf("Nu sunt elemente pozitive in masivul bidimesnional");
     
     printf("\n");
