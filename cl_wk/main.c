@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
+#include<string.h>
 
 // Din carte la pc
 // Pag.22-ex.11,12
@@ -455,21 +456,21 @@ int main(){
 
     // printf("\n"); 
 
-    const int n = 5;  
+    // const int n = 5;  
 
-    int m[n][n];
+    // int m[n][n];
 
-    for(int i = 0; i < n; i++)
-        for(int j = 0; j < n; j++)
-            m[i][j] = rand() % 10;
+    // for(int i = 0; i < n; i++)
+    //     for(int j = 0; j < n; j++)
+    //         m[i][j] = rand() % 10;
 
-    printf("Matrix: \n");
+    // printf("Matrix: \n");
 
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++)
-            printf("%d ",m[i][j]); 
-        printf("\n");
-    }
+    // for(int i = 0; i < n; i++){
+    //     for(int j = 0; j < n; j++)
+    //         printf("%d ",m[i][j]); 
+    //     printf("\n");
+    // }
 
     // printf("\nPrimul Rand : ");
 
@@ -513,7 +514,7 @@ int main(){
     //     printf("\n");
     // }
 
-    printf("\n");
+    // printf("\n");
 
     //prima linie ultima coloana
 
@@ -534,24 +535,24 @@ int main(){
     //     }
     // }
 
-    int i = 0, j = 0;
+    // int i = 0, j = 0;
 
-    int di[] = {0, 1, 0, -1};
-    int dj[] = {1, 0, -1, 0};
+    // int di[] = {0, 1, 0, -1};
+    // int dj[] = {1, 0, -1, 0};
 
-    int dir = 0;
+    // int dir = 0;
 
-    for(int k = 0; k < 4*n-4; k++){
-        printf("%d ", m[i][j]);
+    // for(int k = 0; k < 4*n-4; k++){
+    //     printf("%d ", m[i][j]);
 
-        if (dir == 0 && j == n - 1)dir = 1;
-        else if (dir == 1 && i == n - 1) dir = 2;
-        else if (dir == 2 && j == 0) dir = 3;
+    //     if (dir == 0 && j == n - 1)dir = 1;
+    //     else if (dir == 1 && i == n - 1) dir = 2;
+    //     else if (dir == 2 && j == 0) dir = 3;
 
         
-        i += di[dir];
-        j += dj[dir];
-    }
+    //     i += di[dir];
+    //     j += dj[dir];
+    // }
 
 
     // for(int k = 0; k < 4 * n - 4; k++){
@@ -568,6 +569,137 @@ int main(){
     // }
 
     printf("\n");
+
+    //puts()
+    //gets()
+
+    // char t[100];
+    // char t2[100];
+
+    // printf("Intrdou textul: ");
+
+    // fgets(t, sizeof(t), stdin);
+
+    // // int ctr;
+    // int n = strlen(t);
+
+    // for(int i = 0; t[i] != 0; i++)
+    //     if(t[i] == 'a' || t[i] == 'e' || t[i] == 'i' || t[i] == 'o' || t[i] == 'u')
+    //         ctr++;
+
+    // printf("Nr vocalelor este %d", ctr);
+
+    // printf("\n");
+
+    // int i = 0;
+    // ctr = 0; 
+
+    // while(t[i] != 0){
+    //     if(t[i] == 'a' || t[i] == 'e' || t[i] == 'i' || t[i] == 'o' || t[i] == 'u')
+    //         ctr++;
+    //     i++;
+    // }
+
+    // printf("Nr vocalelor 2 este %d", ctr);
+
+    // printf("\n");
+
+    // while(t[i] != 0){
+    //     if(t[i] == 'a' || t[i] == 'e' || t[i] == 'i' || t[i] == 'o' || t[i] == 'u')
+    //         ctr++;
+    //     i++;
+    // }
+
+    // char t[100];
+    // char t2[100];
+
+    // printf("Intrdou textul: ");
+
+    // fgets(t, sizeof(t), stdin);
+
+    // int n = strlen(t);
+
+    // int i = 0;
+
+    // while(t[i] != 0){
+    //     t2[n-i-2] = t[i];
+    //     i++;
+    // }
+
+    // t2[n-1] = 0;
+    // t[n-1] = 0;
+
+    // // printf("%s", t2);
+
+    // printf("\n");
+
+    // bool f = true;
+
+    // i = 0;
+
+    // while(t[i] != '\0'){
+    //     if(t[i] != t2[i]){
+    //         printf("t nui palindrom");
+    //         f = false;
+    //         break;
+    //     }
+    //     i++;
+    // }
+
+    // if(f)printf("t este palindrom");
+
+    // printf("\n");
+
+    char t[100];
+    char t1[100];
+
+    fgets(t,sizeof(t),stdin);
+
+    int n = strlen(t);
+
+    t[n-1] = 0;
+
+    int i = 0;
+    int j = 0;
+
+    //V1
+
+    while(t[i] != 0) {
+        if(t[i] == 'c' && t[i+1] == 's'){
+            t1[j] = 'x';
+            i++;
+        }else {
+            t1[j] = t[i];
+        }
+        j++;
+        i++;
+    }
+
+    t1[j] = 0;
+
+    printf("%s", t1);
+    printf("\nV2\n");
+    
+    i = 0;
+    j = 0; 
+
+    while(t[i] != 0) {
+       if(t[i] == 'c' && t[i+1] == 's'){
+            printf("\n%d\n", i);
+            t[i] = 'x';
+            i++;
+            while(t[i+1] != 0 ){
+                if(t[i+1] == 'c' && t[i+2] == 's'){
+                    printf("\nnigga %c %c %d\n", t[i], t[i+1], i);
+                    break;
+                }
+                t[i] = t[i+1];
+                i++;
+            }
+       }else i++;
+    }
+
+    printf("%s\n", t);
 
     return 0;
 }
