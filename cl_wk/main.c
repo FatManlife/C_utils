@@ -650,56 +650,140 @@ int main(){
 
     // printf("\n");
 
-    char t[100];
-    char t1[100];
+    // char t[100];
+    // char t1[100];
 
-    fgets(t,sizeof(t),stdin);
+    // fgets(t,sizeof(t),stdin);
 
-    int n = strlen(t);
+    // int n = strlen(t);
 
-    t[n-1] = 0;
+    // t[n-1] = 0;
 
-    int i = 0;
-    int j = 0;
+    // int i = 0;
+    // int j = 0;
 
-    //V1
+    // //V1
 
-    while(t[i] != 0) {
-        if(t[i] == 'c' && t[i+1] == 's'){
-            t1[j] = 'x';
-            i++;
-        }else {
-            t1[j] = t[i];
-        }
-        j++;
-        i++;
-    }
+    // while(t[i] != 0) {
+    //     if(t[i] == 'c' && t[i+1] == 's'){
+    //         t1[j] = 'x';
+    //         i++;
+    //     }else {
+    //         t1[j] = t[i];
+    //     }
+    //     j++;
+    //     i++;
+    // }
 
-    t1[j] = 0;
+    // t1[j] = 0;
 
-    printf("%s", t1);
-    printf("\nV2\n");
+    // printf("%s", t1);
+    // printf("\nV2\n");
     
-    i = 0;
-    j = 0; 
+    // i = 0;
+    // j = 0; 
 
-    while(t[i] != 0) {
-       if(t[i] == 'c' && t[i+1] == 's'){
-            printf("\n%d\n", i);
-            t[i] = 'x';
-            i++;
-            while(t[i+1] != 0 ){
-                if(t[i+1] == 'c' && t[i+2] == 's'){
-                    printf("\nnigga %c %c %d\n", t[i], t[i+1], i);
-                    break;
-                }
-                t[i] = t[i+1];
-                i++;
-            }
-       }else i++;
-    }
+    // while(t[i] != 0) {
+    //    if(t[i] == 'c' && t[i+1] == 's'){
+    //         printf("\n%d\n", i);
+    //         t[i] = 'x';
+    //         i++;
+    //         while(t[i+1] != 0 ){
+    //             if(t[i+1] == 'c' && t[i+2] == 's'){
+    //                 printf("\nnigga %c %c %d\n", t[i], t[i+1], i);
+    //                 break;
+    //             }
+    //             t[i] = t[i+1];
+    //             i++;
+    //         }
+    //    }else i++;
+    // }
 
-    printf("%s\n", t);
+    // printf("%s\n", t);
+
+ //ex34
+    // char t1[100], t2[100];
+
+    // printf("Entere t1: ");
+    // fgets(t1,100,stdin); 
+
+    // printf("Entere t2: ");
+    // fgets(t2,100,stdin); 
+
+    // t1[strcspn(t1,"\n")] = '\0';
+    // t2[strcspn(t2,"\n")] = '\0';
+
+    // int n1 = strlen(t1);
+    // int n2 = strlen(t2);
+
+    // if(n1 != n2){
+    //     printf("no");
+    //     return 1;
+    // }
+
+    // char *p1 = t1, *p2 = t2 ;
+
+    // int freq[256] = {0};
+
+    // for(int i  = 0 ; i < n1; i++){
+    //     freq[*p1++]++;
+    //     freq[*p2++]--;
+    // }
+
+    // for(int i = 0; i < 256; i++){
+    //     if(freq[i] != 0){
+    //         printf("no");
+    //         return 1;
+    //     }
+    // }
+
+    // printf("da");
+
+    //ex 35
+
+    // char t[100];
+
+    // printf("Entere t: ");
+    // fgets(t,100,stdin); 
+
+    // t[strcspn(t,"\n")] = '\0';
+
+    // int n = strlen(t);
+
+    // char *p = t;
+
+    // int freq[256] = {0};
+
+    // for(int i = 0; i < n; i++){
+    //     freq[*p++]++;
+    // }
+
+    // int ctr = 0;
+
+    // for(int i = 0; i < 256; i++)if(freq[i] != 0) ctr++;
+  
+    // printf("Sunt %d in cuvant", ctr);
+
+    //36
+    // char t[100];
+
+    // printf("Entere t: ");
+    // fgets(t,100,stdin); 
+
+    // t[strcspn(t,"\n")] = '\0';
+
+    // int n = strlen(t);
+
+    // for(int i = 0; i < n; i++){
+    //     if(t[i] == ' '){
+    //         printf("\n");
+    //         continue;
+    //     }
+    //     printf("%c", t[i]);
+    // }
+
+    // printf("\n");
+
 
     return 0;
 }
