@@ -650,6 +650,7 @@ int main(){
 
     // printf("\n");
 
+<<<<<<< Updated upstream
     // char t[100];
     // char t1[100];
 
@@ -677,6 +678,86 @@ int main(){
 
     // t1[j] = 0;
 
+=======
+    //ex 35 p 84
+    // char letter[100];
+    // char uni[100];
+
+    // printf("Introdu cuvant: ");
+    // fgets(letter,sizeof(letter),stdin);
+
+    // int n = strlen(letter) - 1;
+
+    // letter[n] = 0;
+    // bool f = true;
+    // int ctr = 0;
+    // uni[ctr] = '/0';
+
+    // for(int i = 0; letter[i] != '\0'; i++){
+    //     f = false;
+
+    //     for(int j = 0; uni[j] != '\0'; j++){
+    //         if(letter[i] == uni[j]){
+    //             f = true;
+    //             break;
+    //         }
+    //     }
+
+    //     if(f){
+            
+    //     }
+    // }
+
+
+    //ex 34 p 84
+    char x[100];
+    char y[100];
+
+    printf("Introdu x: ");
+    fgets(x,sizeof(x),stdin);
+    printf("Introdu y: ");
+    fgets(y,sizeof(y),stdin);
+
+    int nx = strlen(x) - 1;
+    int ny = strlen(y) - 1;
+
+    x[nx] = 0;
+    x[nx] = 0;
+
+
+    if(nx != ny || x[nx-1] != y[0]){
+        printf("nu");
+        return 0; 
+    } 
+    
+    for(int i = 1; i < ny - 1; i++)
+    {
+        if(x[i-1] != y[i]){
+            printf("%c %c", x[i-1], yp);
+            return 0; 
+        }
+    }
+
+    printf("da");
+
+    //V1
+ 
+
+
+    // while(t[i] != 0) {
+    //     if(t[i] == 'c' && t[i+1] == 's'){
+    //         t1[j] = 'x';
+    //         i++;
+    //     }else {
+    //         t1[j] = t[i];
+    //     }
+    //     j++;
+    //     i++;
+    // }
+
+    // t1[j] = 0;
+
+>>>>>>> Stashed changes
     // printf("%s", t1);
     // printf("\nV2\n");
     
@@ -698,6 +779,7 @@ int main(){
     //         }
     //    }else i++;
     // }
+<<<<<<< Updated upstream
 
     // printf("%s\n", t);
 
@@ -784,8 +866,13 @@ int main(){
 
     // printf("\n");
 
+=======
+
+    // printf("%s\n", t);
+>>>>>>> Stashed changes
 
     return 0;
 }
 
 //pr 20,21,22,24 p56 p53 pr 12;
+//82 34 35 36
