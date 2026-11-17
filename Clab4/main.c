@@ -44,10 +44,10 @@ void Allocatemem(int *ch, int *n, int *m, int ***matrix){
     checkInt("introdu nr de linii mai mare ca 0 : ",n,0);
     checkInt("introdu nr de coloane mai mare ca 0 : ",m,0);
 
-    *matrix = malloc(*n * sizeof **matrix);
+    *matrix = (int **) malloc(*n * sizeof **matrix);
 
     for(int i = 0;  i < *n; i++){
-        (*matrix)[i] = malloc(*m * sizeof * (*matrix)[i]);
+        (*matrix)[i] = (int *) malloc(*m * sizeof * (*matrix)[i]);
         for (int j = 0; j < *m; j++)
             (*matrix)[i][j] = 0;
     }
