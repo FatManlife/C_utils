@@ -12,7 +12,48 @@
 // Pag.27-ex.42,48
 // Pag.28-ex.54,56
 
+// int minNum(int n, int min, int *min_ptr){
+//     if (n == 0) return min;  
+
+//     if (min > *min_ptr){
+//         min = *min_ptr;
+//     }
+
+//     return minNum(--n, min, ++min_ptr);
+// }
+
+int ccmdc(a,b){
+    int r = 0;
+    r = a % b;
+    a = b;
+    b = r;
+    if (b == 0) return a;
+    else return cmmdc(a,b);
+}
+
 int main(){
+    //Pr 1,2,3 pag 131, 137 pr 1 140 pr 14 , pr 6 pag 134, pr 1 pag 137
+    // const int n = 100;
+
+    // int v[n];
+
+    // for(int i = 0; i  < n ; i++) v[i] = rand() % 50 + 3;
+
+    // printf("Vector: ");
+
+    // for(int i = 0; i < n; i++) printf("%d ", v[i]);
+
+    // printf("\n\n");
+
+    // int *temp = v;
+
+    // printf("Min = %d", minNum(n,v[0], temp++));
+
+    /////////////////////////////////////////////
+    int a = 1000, b = 245;
+
+    printf("Euclid: %d", ccmdc(a,b));
+
     //P-22 Ex11 a
     //int n;
 
@@ -650,7 +691,6 @@ int main(){
 
     // printf("\n");
 
-<<<<<<< Updated upstream
     // char t[100];
     // char t1[100];
 
@@ -678,86 +718,6 @@ int main(){
 
     // t1[j] = 0;
 
-=======
-    //ex 35 p 84
-    // char letter[100];
-    // char uni[100];
-
-    // printf("Introdu cuvant: ");
-    // fgets(letter,sizeof(letter),stdin);
-
-    // int n = strlen(letter) - 1;
-
-    // letter[n] = 0;
-    // bool f = true;
-    // int ctr = 0;
-    // uni[ctr] = '/0';
-
-    // for(int i = 0; letter[i] != '\0'; i++){
-    //     f = false;
-
-    //     for(int j = 0; uni[j] != '\0'; j++){
-    //         if(letter[i] == uni[j]){
-    //             f = true;
-    //             break;
-    //         }
-    //     }
-
-    //     if(f){
-            
-    //     }
-    // }
-
-
-    //ex 34 p 84
-    char x[100];
-    char y[100];
-
-    printf("Introdu x: ");
-    fgets(x,sizeof(x),stdin);
-    printf("Introdu y: ");
-    fgets(y,sizeof(y),stdin);
-
-    int nx = strlen(x) - 1;
-    int ny = strlen(y) - 1;
-
-    x[nx] = 0;
-    x[nx] = 0;
-
-
-    if(nx != ny || x[nx-1] != y[0]){
-        printf("nu");
-        return 0; 
-    } 
-    
-    for(int i = 1; i < ny - 1; i++)
-    {
-        if(x[i-1] != y[i]){
-            printf("%c %c", x[i-1], yp);
-            return 0; 
-        }
-    }
-
-    printf("da");
-
-    //V1
- 
-
-
-    // while(t[i] != 0) {
-    //     if(t[i] == 'c' && t[i+1] == 's'){
-    //         t1[j] = 'x';
-    //         i++;
-    //     }else {
-    //         t1[j] = t[i];
-    //     }
-    //     j++;
-    //     i++;
-    // }
-
-    // t1[j] = 0;
-
->>>>>>> Stashed changes
     // printf("%s", t1);
     // printf("\nV2\n");
     
@@ -779,7 +739,6 @@ int main(){
     //         }
     //    }else i++;
     // }
-<<<<<<< Updated upstream
 
     // printf("%s\n", t);
 
@@ -866,10 +825,6 @@ int main(){
 
     // printf("\n");
 
-=======
-
-    // printf("%s\n", t);
->>>>>>> Stashed changes
 
     return 0;
 }
