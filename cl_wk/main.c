@@ -12,27 +12,119 @@
 // Pag.27-ex.42,48
 // Pag.28-ex.54,56
 
-// int minNum(int n, int min, int *min_ptr){
-//     if (n == 0) return min;  
+int minNum(int n, int min, int *min_ptr){
+    if (n == 0) return min;  
 
-//     if (min > *min_ptr){
-//         min = *min_ptr;
-//     }
+    if (min > *min_ptr){
+        min = *min_ptr;
+    }
 
-//     return minNum(--n, min, ++min_ptr);
-// }
-
-int ccmdc(a,b){
-    int r = 0;
-    r = a % b;
-    a = b;
-    b = r;
-    if (b == 0) return a;
-    else return cmmdc(a,b);
+    return minNum(--n, min, ++min_ptr);
 }
 
+int ccmdc(int a,int b){
+    if (b == 0) return a;
+    else return ccmdc(b,a%b);
+}
+
+int ccmdcV2(int a,int b){
+    if (a == b) return a;
+    if (a > b) return ccmdcV2(a-b, b);
+    else return ccmdc(a,b-a);
+}
+
+void hanoi(int n, char a, char b, char c) {
+    if (n == 0) return;
+
+    hanoi(n - 1, a, c, b);
+    printf("%c -> %c\n", a, c);
+    hanoi(n - 1, b, a, c);
+}
+
+void genereaza(int a[], int n, int k, int t) {
+    if (t == n) {
+        for (int i = 0; i < n; i++)
+            printf("%d ", a[i]);
+        printf("\n");
+    } else {
+        for (int j = 1; j <= k; j++) {
+            a[t] = j;
+            genereaza(a, n, k, t + 1);
+        }
+    }
+}
+
+int determinant(int n, int a[n][n]) {
+    if (n == 1)
+        return a[0][0];
+
+    int det = 0;
+
+    for (int j = 0; j < n; j++) {
+        int b[n-1][n-1];
+
+        for (int i = 1; i < n; i++) {
+            int col = 0;
+            for (int k = 0; k < n; k++) {
+                if (k != j)
+                    b[i-1][col++] = a[i][k];
+            }
+        }
+
+        int semn = (j % 2 == 0) ? 1 : -1;
+        det += semn * a[0][j] * determinant(n-1, b);
+    }
+
+    return det;
+}
+
+
 int main(){
-    //Pr 1,2,3 pag 131, 137 pr 1 140 pr 14 , pr 6 pag 134, pr 1 pag 137
+    //Pr 1,2,3 pag 131, 137 pr 1 140 pr 14 , pr 6 pag 134, 
+
+    int n;
+
+    printf("n = ");
+    scanf("%d", &n);
+
+    if (n < 1 || n > 10)
+        return 1;
+
+    int a[n][n];
+
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            scanf("%d", &a[i][j]);
+
+    printf("Determinantul = %d\n", determinant(n, a));
+
+    /////////////////////////////////////////////
+
+    // int a[30], n, k, t = 0;
+
+    // printf("Introdu n, k: ");
+    // scanf("%d %d", &n, &k);
+
+    // if (n < 1 || n > 30 || k < 1)
+    //     return 1;
+
+    // genereaza(a, n, k, t);
+
+    /////////////////////////////////////////////
+    // int a = 987654321, b = 123456789;
+
+    // printf("Euclid: %d", ccmdcV2(a,b));   
+
+    /////////////////////////////////////////////
+    // int n;
+    // printf("Numarul de discuri: ");
+    // scanf("%d", &n);
+
+    // if (n < 1) return 1;
+
+    // hanoi(n, 'A', 'B', 'C');
+    // return 0;
+    /////////////////////////////////////////////
     // const int n = 100;
 
     // int v[n];
@@ -50,9 +142,10 @@ int main(){
     // printf("Min = %d", minNum(n,v[0], temp++));
 
     /////////////////////////////////////////////
-    int a = 1000, b = 245;
+    // int a = 987654321, b = 123456789;
 
-    printf("Euclid: %d", ccmdc(a,b));
+    // printf("Euclid: %d", ccmdc(a,b));
+    ////////////////////////////////////////////
 
     //P-22 Ex11 a
     //int n;
